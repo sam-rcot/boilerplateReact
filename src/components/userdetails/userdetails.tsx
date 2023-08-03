@@ -31,7 +31,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
         <>
             <div className={styles.UserDetails}>
                 <div className={styles.resultContainer} ref={resultRef}>
-                    <p>Hello {firstName.charAt(0).toUpperCase() + firstName.slice(1)},</p>
+                    <p>Hello{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},</p>
                     <p>
                         Apologies for the issues you have been having logging in. I have now
                         updated your account and created a new temporary password.

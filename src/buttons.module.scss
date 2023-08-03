@@ -22,12 +22,14 @@
     font-family: 'Cera Pro';
   }
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+  }
+  &:active, &.buttonPressed {
+    transition: transform 0.2s ease;
+    transform: scale(0.95);
   }
 }
-.buttonPressed {
-  transform: scale(0.9);
-}
+
 
 .buttonIcon {
   color: var(--color-dark-teal);
