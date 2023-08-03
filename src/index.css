@@ -1,0 +1,11 @@
+:root {
+    --color-dark-teal: #003643;
+    --color-teal: #43cfb5;
+    --color-purple: #6f35a3;
+}
+body {
+    margin: 0;
+    background-color: var(--color-dark-teal);
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}

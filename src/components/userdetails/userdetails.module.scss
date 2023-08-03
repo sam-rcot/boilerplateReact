@@ -1,0 +1,27 @@
+@import "../../index.css";
+@import "../../buttons.module.scss";
+
+.UserDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultContainer {
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 15px;
+  border: solid var(--color-teal) 5px;
+  border-radius: 20px;
+  width: 50%;
+  .select {
+    user-select: all;
+  }
+  strong {
+    font-family: inherit;
+  }
+  a {
+    text-decoration: none;
+  }
+}
