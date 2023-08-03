@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import CopyButton from '../copybutton/copybutton';
+import PasswordButton from '../passwordbutton/passwordbutton';
 
 type UserDetailsProps = {
     email: string,
@@ -78,16 +79,12 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         handleButtonRelease={handleButtonRelease}
                         resultRef={resultRef}
                     />
-                    <button
-                        className={`${styles.button} ${pressedButtonId === 'newPasswordButton' ? styles['buttonPressed'] : ''}`}
-                        onMouseDown={() => handleButtonPress('newPasswordButton')}
-                        onMouseUp={handleButtonRelease}
-                        onMouseLeave={handleButtonRelease}
-                        onClick={handleNewPassword}
-                    >
-                        <FontAwesomeIcon icon={faArrowsRotate} size="3x" className={styles.buttonIcon} />
-                        <span className={styles.buttonText}>Create new password</span>
-                    </button>
+                    <PasswordButton
+                        pressedButtonId={pressedButtonId}
+                        handleButtonPress={handleButtonPress}
+                        handleButtonRelease={handleButtonRelease}
+                        setPassword={setPassword}
+                    />
                 </div>
             </div>
         </>

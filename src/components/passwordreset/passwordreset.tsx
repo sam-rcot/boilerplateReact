@@ -10,6 +10,7 @@ function PasswordReset() {
 
   return (
     <div className={styles.PasswordReset}>
+      <h1>Password Reset Boilerplate</h1>
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />
       <UserDetails email={email} firstName={firstName} />
 
