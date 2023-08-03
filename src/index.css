@@ -1,3 +1,5 @@
+@import './assets/fonts/stylesheet.css';
+
 :root {
     --color-dark-teal: #003643;
     --color-teal: #43cfb5;
@@ -8,4 +10,8 @@ body {
     background-color: var(--color-dark-teal);
     font-family: Arial, sans-serif;
     font-size: 1rem;
+}
+h1 {
+    font-family: 'Cera Pro';
+    text-align: center;
 }

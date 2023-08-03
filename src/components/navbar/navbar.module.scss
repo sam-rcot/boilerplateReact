@@ -1,6 +1,7 @@
 @import '../../index.css';
 
 .NavBar {
+    margin-top: 10px;
     width: 100vw;
     .links {
         display: flex;
@@ -8,13 +9,15 @@
         .link {
             list-style: none;
             a {
-                text-decoration: underline;
+                text-decoration: none;
                 color: white;
                 text-transform: capitalize;
-                font-size: 2rem;
+                font-size: 2.5rem;
                 font-weight: bold;
                 padding: 15px 10px;
                 border-radius: 10px;
+                font-family: 'Cera Pro';
+                transition: 700ms;
                 &:hover {
                     text-decoration: none;
                     color: var(--color-teal);

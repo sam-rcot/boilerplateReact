@@ -1,15 +1,31 @@
 import { useState } from 'react'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 import styles from './App.module.scss'
 import NavBar from './components/navbar/navbar';
 import PasswordReset from './components/passwordreset/passwordreset'
+import GeneralPurpose from './components/generalpurpose/generalpurpose';
 
 function App() {
-  return (
-    <div className={styles.App}>
-      <NavBar />
-      <PasswordReset />
+  const [firstName, setFirstName] = useState('');
 
-    </div>
+  return (
+    <BrowserRouter>
+      <div className={styles.App}>
+        <NavBar />
+        <Routes>
+        <Route path="/" element={<PasswordReset />} />
+          <Route path="generalpurpose/*" element={<GeneralPurpose
+            firstName={firstName}
+            setFirstName={setFirstName} />} />
+          
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 

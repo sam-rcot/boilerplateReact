@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
-import styles from '../userdetails/userdetails.module.scss';
+import styles from '../../buttons.module.scss';
 import generatePassword from "../../utils/generatePassword";
 
 type PasswordButtonProps = {
