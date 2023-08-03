@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {
-  BrowserRouter,
+  HashRouter as Router, // Rename BrowserRouter to HashRouter
   Routes,
   Route
 } from "react-router-dom";
@@ -13,18 +13,18 @@ function App() {
   const [firstName, setFirstName] = useState('');
 
   return (
-    <BrowserRouter>
+    <Router> {/* Use renamed HashRouter here */}
       <div className={styles.App}>
         <NavBar />
         <Routes>
-        <Route path="/" element={<PasswordReset />} />
+          <Route path="/" element={<PasswordReset />} />
           <Route path="generalpurpose/*" element={<GeneralPurpose
             firstName={firstName}
             setFirstName={setFirstName} />} />
           
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   )
 }
 
