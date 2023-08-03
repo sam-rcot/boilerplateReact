@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import styles from './App.module.scss'
+import NavBar from './components/navbar/navbar';
 import PasswordReset from './components/passwordreset/passwordreset'
 
 function App() {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-
-
   return (
     <div className={styles.App}>
+      <NavBar />
       <PasswordReset />
 
     </div>

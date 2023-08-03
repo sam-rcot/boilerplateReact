@@ -5,7 +5,7 @@ import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import { RefObject } from 'react';
 
 type CopyButtonProps = {
-    pressedButtonId: string, 
+    pressedButtonId: string | null, 
     handleButtonPress: (id: string) => void,
     handleButtonRelease: () => void,
     resultRef: RefObject<HTMLDivElement>,

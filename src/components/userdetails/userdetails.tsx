@@ -1,9 +1,6 @@
 import { useRef, useState } from 'react'
 import styles from "./userdetails.module.scss";
 import generatePassword from "../../utils/generatePassword";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy } from '@fortawesome/free-regular-svg-icons';
-import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import CopyButton from '../copybutton/copybutton';
 import PasswordButton from '../passwordbutton/passwordbutton';
 
@@ -13,31 +10,15 @@ type UserDetailsProps = {
 }
 
 const UserDetails = ({ email, firstName }: UserDetailsProps) => {
-    const resultRef = useRef(null);
+    const resultRef = useRef<HTMLDivElement>(null);
     const [password, setPassword] = useState(generatePassword());
 
-    const handleButtonClick = () => {
-        const resultContainerElement = resultRef.current;
-        const selection = window.getSelection();
-        selection.selectAllChildren(resultContainerElement);
+    
+    
+    const [pressedButtonId, setPressedButtonId] = useState<null | string>(null);
 
-        try {
-            const successful = document.execCommand('copy');
-            const msg = successful ? 'successful' : 'unsuccessful';
-            console.log(`Copy command was ${msg}`);
-        } catch (err) {
-            console.error('Unable to copy', err);
-        }
-
-        selection.collapseToEnd();
-    };
-    const handleNewPassword = () => {
-        const newPassword = generatePassword();
-        setPassword(newPassword);
-    };
-    const [pressedButtonId, setPressedButtonId] = useState(null);
-
-    const handleButtonPress = (id) => {
+    const handleButtonPress = (id: string) => {
+        console.log(typeof(id))
         setPressedButtonId(id);
     };
 

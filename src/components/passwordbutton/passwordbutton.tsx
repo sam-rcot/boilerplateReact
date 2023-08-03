@@ -4,7 +4,7 @@ import styles from '../userdetails/userdetails.module.scss';
 import generatePassword from "../../utils/generatePassword";
 
 type PasswordButtonProps = {
-    pressedButtonId: string,
+    pressedButtonId: string | null,
     handleButtonPress: (id: string) => void,
     handleButtonRelease: () => void,
     setPassword: (password: string) => void,

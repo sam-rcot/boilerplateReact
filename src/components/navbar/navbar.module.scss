@@ -1,0 +1,27 @@
+@import '../../index.css';
+
+.NavBar {
+    width: 100vw;
+    .links {
+        display: flex;
+        justify-content: space-around;
+        .link {
+            list-style: none;
+            a {
+                text-decoration: underline;
+                color: white;
+                text-transform: capitalize;
+                font-size: 2rem;
+                font-weight: bold;
+                padding: 15px 10px;
+                border-radius: 10px;
+                &:hover {
+                    text-decoration: none;
+                    color: var(--color-teal);
+                    background-color: white;
+                    
+                }
+            } 
+        }
+    }
+}
