@@ -2,8 +2,7 @@ import { useState } from 'react'
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link,
+  Route
 } from "react-router-dom";
 import styles from './App.module.scss'
 import NavBar from './components/navbar/navbar';
