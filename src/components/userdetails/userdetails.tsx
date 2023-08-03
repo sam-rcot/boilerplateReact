@@ -30,7 +30,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
     return (
         <>
             <div className={styles.UserDetails}>
-                <div className={styles.resultContainer} ref={resultRef}>
+                <div className={styles.resultContainer} ref={resultRef} style={{fontFamily: 'Arial'}}>
                     <p>Hello{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},</p>
                     <p>
                         Apologies for the issues you have been having logging in. I have now

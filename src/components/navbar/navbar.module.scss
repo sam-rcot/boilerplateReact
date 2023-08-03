@@ -8,6 +8,9 @@
         justify-content: space-around;
         .link {
             list-style: none;
+            .active {
+                text-decoration: underline;
+            }
             a {
                 text-decoration: none;
                 color: white;
@@ -24,7 +27,9 @@
                     background-color: white;
                     
                 }
-            } 
+                
+            }
+            
         }
     }
 }

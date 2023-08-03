@@ -1,6 +1,9 @@
 import { useRef, useState } from 'react'
 import styles from "./generalpurpose.module.scss";
 import CopyButton from '../copybutton/copybutton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 type UserFormProps = {
     setFirstName: (firstName: string) => void;
@@ -24,12 +27,24 @@ const GeneralPurpose = ({ firstName, setFirstName }: UserFormProps) => {
     const handleButtonRelease = () => {
         setPressedButtonId(null);
     };
+    const [isInfoTextVisible, setInfoTextVisibility] = useState(true);
 
 
     return (
         <>
             <div className={styles.GeneralPurpose}>
                 <h1>General Purpose Boilerplate</h1>
+
+                <button className={styles.hideButton} onClick={() => setInfoTextVisibility(!isInfoTextVisible)}>
+                {isInfoTextVisible ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown}/>}
+                </button>
+                {isInfoTextVisible &&
+                    <ul className={styles.infoText}>
+                        <li>Same deal just enter the name and hit copy.</li>
+                        <li>If you need the copy changing shoot me a message on Teams and I'll commit it.</li>
+                        <li>Likewise with additional pages but that might take a bit longer.</li>
+                    </ul>
+                }
                 <form className={styles.myForm} onSubmit={handleSubmit}>
                     <div className={styles.inputWrapper}>
                         <div className={styles.inputBox}>
