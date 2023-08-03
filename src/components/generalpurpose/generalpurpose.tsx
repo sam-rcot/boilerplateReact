@@ -27,16 +27,18 @@ const GeneralPurpose = ({ firstName, setFirstName }: UserFormProps) => {
     const handleButtonRelease = () => {
         setPressedButtonId(null);
     };
-    const [isInfoTextVisible, setInfoTextVisibility] = useState(true);
+    const [isInfoTextVisible, setInfoTextVisibility] = useState(false);
 
 
     return (
         <>
             <div className={styles.GeneralPurpose}>
                 <h1>General Purpose Boilerplate</h1>
-
                 <button className={styles.hideButton} onClick={() => setInfoTextVisibility(!isInfoTextVisible)}>
-                {isInfoTextVisible ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown}/>}
+                    {isInfoTextVisible ?
+                        <span><FontAwesomeIcon icon={faChevronUp} /> Hide Help Text</span> :
+                        <span><FontAwesomeIcon icon={faChevronDown} /> Show Help Text</span>
+                    }
                 </button>
                 {isInfoTextVisible &&
                     <ul className={styles.infoText}>

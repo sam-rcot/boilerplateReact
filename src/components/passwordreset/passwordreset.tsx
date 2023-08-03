@@ -9,15 +9,18 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 const PasswordReset = () => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
-  const [isInfoTextVisible, setInfoTextVisibility] = useState(true);
+  const [isInfoTextVisible, setInfoTextVisibility] = useState(false);
 
   return (
     <div className={styles.PasswordReset}>
       <h1>Password Reset Boilerplate</h1>
       <button className={styles.hideButton} onClick={() => setInfoTextVisibility(!isInfoTextVisible)}>
-        {isInfoTextVisible ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown}/>}
+        {isInfoTextVisible ?
+          <span><FontAwesomeIcon icon={faChevronUp} /> Hide Help Text</span> :
+          <span><FontAwesomeIcon icon={faChevronDown} /> Show Help Text</span>
+        }
       </button>
-      {isInfoTextVisible && 
+      {isInfoTextVisible &&
         <ul className={styles.infoText}>
           <li>Enter the user's first name and email and the text should automatically update.</li>
           <li>Single clicking on either the email or password should highlight it for ease of copying.</li>
