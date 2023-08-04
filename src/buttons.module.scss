@@ -11,15 +11,16 @@
   font-style: inherit;
   font-weight: inherit;
   line-height: inherit;
-  padding: 15px 20px;
+  padding: 12.5px 20px;
   color: var(--color-purple);
   transition: all 0.3s ease;
   margin-top: 5%;
   .buttonText {
     padding-left: 10px;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: white;
     font-family: 'Cera Pro';
+    white-space: nowrap;
   }
   &:hover {
     transform: scale(1.05);
@@ -33,4 +34,21 @@
 
 .buttonIcon {
   color: var(--color-dark-teal);
+}
+@media only screen and (max-width: 600px) {
+    .button {
+      padding: 10px 15px;
+      .buttonText {
+        font-size: 1rem;
+      }
+    }
+}
+
+@media only screen and (max-width: 870px) {
+  .button {
+    padding: 12.5px 17.5px;
+    .buttonText {
+      font-size: 1rem;
+    }
+  }
 }
