@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/sam-rcot/boilerplateReact",
+  "license": "Unlicense",
+  "people": {
+    "name" : "Barney Rubble",
+    "email" : "b@rubble.com",
+    "url" : "http://barnyrubble.tumblr.com/"
+  },
+  
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
