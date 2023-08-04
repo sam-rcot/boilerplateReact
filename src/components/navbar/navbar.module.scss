@@ -10,6 +10,9 @@
             list-style: none;
             .active {
                 text-decoration: underline;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
             a {
                 text-decoration: none;
@@ -20,7 +23,7 @@
                 padding: 15px 10px;
                 border-radius: 10px;
                 font-family: 'Cera Pro';
-                transition: 700ms;
+                transition: 200ms ease;
                 &:hover {
                     text-decoration: none;
                     color: var(--color-teal);

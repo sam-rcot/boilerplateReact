@@ -67,6 +67,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         setPassword={setPassword}
                     />
                 </div>
+                
             </div>
         </>
     );
