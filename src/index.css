@@ -17,6 +17,9 @@ h1 {
     font-family: 'Cera Pro';
     text-align: center;
 }
+a:visited {
+    color: #06c;
+}
 
 @media only screen and (max-width: 870px) {
     h1 {

@@ -26,6 +26,7 @@ const PasswordReset = () => {
           <li>Single clicking on either the email or password should highlight it for ease of copying.</li>
           <li>The copy button at the bottom will set the clipboard to the boilerplate text <strong>with formatting. </strong></li>
           <li>When pasting into Outlook it should be formatted correctly without having to select <i>"Match destination formatting"</i>.</li>
+          <li>Link to <a href="https://github.com/sam-rcot/boilerplateReact">GitHub repo</a>.</li>
         </ul>
       }
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />
