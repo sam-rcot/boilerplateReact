@@ -66,12 +66,12 @@ const GeneralPurpose = ({ firstName, setFirstName }: UserFormProps) => {
                 </form>
                 <div className={styles.resultContainer} ref={resultRef}>
                     <p>
-                        Hello{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
+                        Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
                         I hope you are well.<br /><br />
                         I am following up on some older emails sent to our team and wanted to know if you received an update or require any further assistance.<br /><br />
                         Please let me know and I will assist further.<br /><br />
                         Kind regards,<br />
-                        Web Team
+                        Digital Team
                     </p>
                 </div>
                 <div className={styles.buttonContainer}>

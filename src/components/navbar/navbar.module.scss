@@ -37,13 +37,25 @@
   }
 }
 
+@media only screen and (max-width: 870px) {
+  .NavBar {
+    .links {
+      .link {
+        a {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .NavBar {
     .links {
       flex-direction: column;
       .link {
         a {
-          font-size: 1.75rem;
+          font-size: 1.65rem;
           padding: 10px 5px;
           &:hover {
             color: white;
@@ -54,14 +66,3 @@
     }
   }
 }
-@media only screen and (max-width: 870px) {
-    .NavBar {
-      .links {
-        .link {
-            a {
-                font-size: 1.65rem;
-            }
-        }
-      }
-    }
-  }

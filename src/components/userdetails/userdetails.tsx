@@ -31,7 +31,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
         <>
             <div className={styles.UserDetails}>
                 <div className={styles.resultContainer} ref={resultRef} style={{fontFamily: 'Arial'}}>
-                    <p>Hello{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},</p>
+                    <p>Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},</p>
                     <p>
                         Apologies for the issues you have been having logging in. I have now
                         updated your account and created a new temporary password.
@@ -51,7 +51,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                     <span className={styles.select}>{password}</span>
                     <br />
                     <p>Kind Regards,<br />
-                        Web Team</p>
+                        Digital Team</p>
                 </div>
                 <div className={styles.buttonContainer}>
                     <CopyButton
