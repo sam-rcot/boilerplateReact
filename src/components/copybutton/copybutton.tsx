@@ -16,8 +16,17 @@ const CopyButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, r
         const resultContainerElement = resultRef.current;
         const selection = window.getSelection();
         if(resultContainerElement && selection){
+    
+            // Save current styles
+            const originalColor = resultContainerElement.style.color;
+            const originalBackgroundColor = resultContainerElement.style.backgroundColor;
+    
+            // Set the desired styles
+            resultContainerElement.style.color = 'black';
+            resultContainerElement.style.backgroundColor = 'white';
+    
             selection.selectAllChildren(resultContainerElement);
-
+    
             try {
                 const successful = document.execCommand('copy');
                 const msg = successful ? 'successful' : 'unsuccessful';
@@ -25,10 +34,15 @@ const CopyButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, r
             } catch (err) {
                 console.error('Unable to copy', err);
             }
-
+    
+            // Revert to the original styles
+            resultContainerElement.style.color = originalColor;
+            resultContainerElement.style.backgroundColor = originalBackgroundColor;
+    
             selection.collapseToEnd();
         }
     };
+    
 
     return (
         <button

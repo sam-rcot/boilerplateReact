@@ -18,7 +18,6 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
     const [pressedButtonId, setPressedButtonId] = useState<null | string>(null);
 
     const handleButtonPress = (id: string) => {
-        console.log(typeof(id))
         setPressedButtonId(id);
     };
 
