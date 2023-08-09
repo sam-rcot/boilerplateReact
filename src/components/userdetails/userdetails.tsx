@@ -43,7 +43,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         credentials shown below and amend your password to something more
                         secure.
                     </p>
-                    <br />
+                    
                     <strong>Username:</strong> <span className={styles.select}>{email}</span>
                     <br />
                     <strong>Temporary password:</strong>{" "}
