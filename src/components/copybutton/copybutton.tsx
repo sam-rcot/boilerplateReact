@@ -24,6 +24,7 @@ const CopyButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, r
             // Set the desired styles
             resultContainerElement.style.color = 'black';
             resultContainerElement.style.backgroundColor = 'white';
+            
     
             selection.selectAllChildren(resultContainerElement);
     
