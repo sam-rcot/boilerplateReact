@@ -37,7 +37,9 @@
     margin: 0px auto;
     line-height: normal;
   }
-  
+  a:visited {
+    color: #339CFF;
+  }
 }
 .buttonContainer {
   display: flex;
