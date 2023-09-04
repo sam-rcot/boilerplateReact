@@ -40,7 +40,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         <a href="https://portal.rcot.co.uk/">
                             <strong>RCOT Portal</strong>
                         </a>{" "}
-                        (https://portal.rcot.co.uk/) on a fresh web browser using the access
+                        (https://portal.rcot.co.uk/) in a new browser window or tab using the access
                         credentials shown below and amend your password to something more
                         secure.
                         <br /><br />
