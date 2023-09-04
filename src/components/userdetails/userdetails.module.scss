@@ -26,7 +26,12 @@
   }
   a {
     font-family: Arial;
-    color: #339CFF
+    color: #339CFF;
+  
+    &:visited {
+      // Your styles for visited links here
+      color: #339CFF;
+    }
   }
   p {
     margin: 0px auto;
