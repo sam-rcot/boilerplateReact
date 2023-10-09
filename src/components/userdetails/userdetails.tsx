@@ -12,9 +12,6 @@ type UserDetailsProps = {
 const UserDetails = ({ email, firstName }: UserDetailsProps) => {
     const resultRef = useRef<HTMLDivElement>(null);
     const [password, setPassword] = useState(generatePassword());
-
-
-
     const [pressedButtonId, setPressedButtonId] = useState<null | string>(null);
 
     const handleButtonPress = (id: string) => {
@@ -24,6 +21,20 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
     const handleButtonRelease = () => {
         setPressedButtonId(null);
     };
+    
+    const handleSelectAll = (event: React.MouseEvent<HTMLSpanElement>) => {
+        const target = event.target as HTMLSpanElement; // Type assert the target
+
+        const range = document.createRange();
+        range.selectNodeContents(target);
+
+        const selection = window.getSelection();
+        if (selection) { // Check if selection is not null
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    };
+
 
 
     return (
@@ -44,10 +55,10 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         credentials shown below and amend your password to something more
                         secure.
                         <br /><br />
-                        <strong>Username:</strong> <span className={styles.select}>{email}</span>
+                        <strong>Username:</strong> <span className={styles.select} onClick={handleSelectAll}>{email}</span>
                         <br />
                         <strong>Temporary password:</strong>{" "}
-                        <span className={styles.select}>{password}</span>
+                        <span className={styles.select} onClick={handleSelectAll}>{password}</span>
                         <br /><br />
                         Kind Regards,<br />
                         Digital Team</p>
