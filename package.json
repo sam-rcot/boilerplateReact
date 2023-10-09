@@ -6,9 +6,9 @@
   "homepage": "https://github.com/sam-rcot/boilerplateReact",
   "license": "Unlicense",
   "people": {
-    "name" : "Barney Rubble",
-    "email" : "b@rubble.com",
-    "url" : "http://barnyrubble.tumblr.com/"
+    "name" : "Sam Liburd",
+    "email" : "sam.liburd@rcot.co.uk",
+    "url" : "https://rcot.co.uk"
   },
   
   "scripts": {
