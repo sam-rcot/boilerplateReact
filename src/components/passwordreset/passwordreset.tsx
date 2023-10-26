@@ -27,6 +27,7 @@ const PasswordReset = () => {
           <li>The copy button at the bottom will set the clipboard to the boilerplate text <strong>with formatting. </strong></li>
           <li>When pasting into Outlook it should be formatted correctly without having to select <i>"Match destination formatting"</i>.</li>
           <li>Link to <a href="https://github.com/sam-rcot/boilerplateReact">GitHub repo</a>.</li>
+          <li>I added GA4 (Google Analytics) to the page so I can play around with it. So it's tracking some of your data. You can read more <a href="https://policies.google.com/technologies/partner-sites">here</a> and <a href="https://support.google.com/analytics/answer/6004245?sjid=18192495453567399596-EU">here</a>.</li>
         </ul>
       }
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />

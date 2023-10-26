@@ -45,6 +45,7 @@ const InboxMonitoring = ({ firstName, setFirstName }: UserFormProps) => {
                         <li>Same deal just enter the name and hit copy.</li>
                         <li>If you need the copy changing shoot me a message on Teams and I'll commit it.</li>
                         <li>Likewise with additional pages but that might take a bit longer.</li>
+                        <li>I added GA4 (Google Analytics) to the page so I can play around with it. So it's tracking some of your data. You can read more <a href="https://policies.google.com/technologies/partner-sites">here</a> and <a href="https://support.google.com/analytics/answer/6004245?sjid=18192495453567399596-EU">here</a>.</li>
                     </ul>
                 }
                 <form className={styles.myForm} onSubmit={handleSubmit}>
