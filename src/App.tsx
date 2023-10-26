@@ -8,6 +8,7 @@ import styles from './App.module.scss'
 import NavBar from './components/navbar/navbar';
 import PasswordReset from './components/passwordreset/passwordreset'
 import GeneralPurpose from './components/generalpurpose/generalpurpose';
+import InboxMonitoring from './components/inboxmonitoring/inboxmonitoring';
 
 function App() {
   const [firstName, setFirstName] = useState('');
@@ -21,7 +22,8 @@ function App() {
           <Route path="generalpurpose/*" element={<GeneralPurpose
             firstName={firstName}
             setFirstName={setFirstName} />} />
-          
+          <Route path="inboxmonitoring/*" element={<InboxMonitoring firstName={firstName}
+            setFirstName={setFirstName} />} />
         </Routes>
       </div>
     </Router>
