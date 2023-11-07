@@ -82,4 +82,4 @@ Temporary Items
 !index.html
 
 # Ignore TypeScript declaration files
-*.d.ts
+# *.d.ts
