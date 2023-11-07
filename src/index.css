@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 1rem;
     overflow: scroll;
-    
+    text-rendering: optimizeLegibility;
 }
 h1 {
     font-family: 'Cera Pro';
