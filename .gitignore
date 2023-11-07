@@ -4,7 +4,7 @@ node_modules/
 .pnp.js
 
 # Vite build output
-dist/
+# dist/
 
 # Yarn Integrity file
 .yarn-integrity
