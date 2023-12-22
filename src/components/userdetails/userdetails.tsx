@@ -1,27 +1,24 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
 import styles from "./userdetails.module.scss";
 import generatePassword from "../../utils/generatePassword";
 import CopyButton from '../copybutton/copybutton';
 import PasswordButton from '../passwordbutton/passwordbutton';
-import userStyles from "./userdetails.module.scss"
 
 type UserDetailsProps = {
     email: string,
     firstName: string
 }
-const tealColor = '#43cfb5'
-//const tealColor = '#003643'
+const tealColor = '#43cfb5';
+
 const tableStyle = {
     border: `2px solid ${tealColor}`,
-    borderCollapse: 'collapse',
-    boxSizing: 'content-box',
+    borderCollapse: 'collapse' as const, // Use 'as const' for literal string types
+    boxSizing: 'content-box' as const,
     fontFamily: 'Arial',
-    //tableLayout: 'fixed',
-    //width: '100%'
 };
 
 const thStyle = {
-    textAlign: 'right',
+    textAlign: 'right' as const,
     fontFamily: 'Arial',
     border: `2px solid ${tealColor}`,
     width: '15%',
@@ -31,24 +28,24 @@ const thStyle = {
 
 const tdStyle = {
     padding: '10px',
-    textAlign: 'start',
+    textAlign: 'start' as const,
     border: `2px solid ${tealColor}`,
     width: 'fit-content',
     height: '25px'
 };
 
 const selectStyle = {
-    userSelect: 'all',
+    userSelect: 'all' as const,
     fontFamily: 'Arial',
-    textAlign: 'left',
+    textAlign: 'left' as const,
     padding: '2px',
 };
+
 const UserDetails = ({ email, firstName }: UserDetailsProps) => {
     const resultRef = useRef<HTMLDivElement>(null);
     const [password, setPassword] = useState(generatePassword());
     const [pressedButtonId, setPressedButtonId] = useState<null | string>(null);
     const tableRef = useRef<HTMLTableElement>(null)
-    const tableStyles = styles
 
     const handleButtonPress = (id: string) => {
         setPressedButtonId(id);
@@ -103,10 +100,10 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                                 <tr>
                                     <th data-role="th" style={{ ...thStyle }}>Username:</th>
                                     <td data-role="td" style={tdStyle}>
-                                        
-                                        <span data-role="th" style={selectStyle} onClick={handleSelectAll}>
+                                        <table><thead><tr><td><span data-role="th" style={selectStyle} onClick={handleSelectAll}>
                                             {email}
-                                        </span>
+                                        </span></td></tr></thead></table>
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -142,8 +139,6 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         handleButtonPress={handleButtonPress}
                         handleButtonRelease={handleButtonRelease}
                         resultRef={resultRef}
-                        tableRef={tableRef}
-                        tableStyles={tableStyles}
                     />
                     <PasswordButton
                         pressedButtonId={pressedButtonId}
