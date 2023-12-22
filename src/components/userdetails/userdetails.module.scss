@@ -17,30 +17,79 @@
   border-radius: 20px;
   width: 50%;
   font-family: Arial;
+
+  .table {
+    table-layout: fixed;
+    width: 100%;
+
+  }
+
+  .table,
+  .th,
+  .td {
+    border: 1px solid var(--color-teal);
+    box-sizing: content-box;
+    font-family: Arial;
+    .select {
+      user-select: all;
+      font-family: Arial;
+      text-align: left;
+      &::after {
+        content: "";
+        display: none;
+        margin-left: auto;
+      }
+    }
+
+    .td {
+      padding: 0.5rem;
+      text-align: start;
+      border: 1px solid var(--color-teal);
+      width: fit-content;
+    }
+
+    .th {
+      text-align: right;
+      font-family: Arial;
+      border: 1px solid var(--color-teal);
+      width: 5rem;
+      padding: 0.25rem 1rem;
+    }
+    .td, .th {
+      height: 2rem;
+    }
+  }
+
+
   .select {
     user-select: all;
     font-family: Arial;
   }
+
   strong {
     font-family: Arial;
   }
+
   a {
     font-family: Arial;
     color: #339CFF;
-  
+
     &:visited {
       // Your styles for visited links here
       color: #339CFF;
     }
   }
+
   p {
     margin: 0px auto;
     line-height: normal;
   }
+
   a:visited {
     color: #339CFF;
   }
 }
+
 .buttonContainer {
   display: flex;
   justify-content: space-around;

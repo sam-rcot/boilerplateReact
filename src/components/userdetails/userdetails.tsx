@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import styles from "./userdetails.module.scss";
 import generatePassword from "../../utils/generatePassword";
 import CopyButton from '../copybutton/copybutton';
 import PasswordButton from '../passwordbutton/passwordbutton';
+import userStyles from "./userdetails.module.scss"
 
 type UserDetailsProps = {
     email: string,
@@ -14,14 +15,17 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
     const [password, setPassword] = useState(generatePassword());
     const [pressedButtonId, setPressedButtonId] = useState<null | string>(null);
 
+
+
     const handleButtonPress = (id: string) => {
         setPressedButtonId(id);
+        //console.log(resultRef)
     };
 
     const handleButtonRelease = () => {
         setPressedButtonId(null);
     };
-    
+
     const handleSelectAll = (event: React.MouseEvent<HTMLSpanElement>) => {
         const target = event.target as HTMLSpanElement; // Type assert the target
 
@@ -33,6 +37,7 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
             selection.removeAllRanges();
             selection.addRange(range);
         }
+
     };
 
 
@@ -55,6 +60,36 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         credentials shown below and amend your password to something more
                         secure.
                         <br /><br />
+                    </p>
+                    <br />
+
+                    <table className={styles.table}>
+                        <tbody>
+                            <tr>
+                                <th className={styles.th}>Username:</th>
+                                <td className={styles.td}>
+                                    <span className={styles.select} onClick={handleSelectAll}>
+                                        {email}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className={styles.table}>
+                        <tbody>
+                            <tr>
+                                <th className={styles.th}>Password:</th>
+                                <td className={styles.td}>
+                                    <span className={styles.select} onClick={handleSelectAll}>
+                                        {password}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <p>
                         <strong>Username:</strong> <span className={styles.select} onClick={handleSelectAll}>{email}</span>
                         <br />
                         <strong>Temporary password:</strong>{" "}
@@ -78,7 +113,8 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                     />
                 </div>
 
-            </div>
+            </div >
+
         </>
     );
 };

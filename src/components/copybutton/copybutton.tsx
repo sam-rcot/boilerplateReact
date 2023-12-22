@@ -20,7 +20,6 @@ const CopyButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, r
             // Save current styles
             const originalColor = resultContainerElement.style.color;
             const originalBackgroundColor = resultContainerElement.style.backgroundColor;
-    
             // Set the desired styles
             resultContainerElement.style.color = 'black';
             resultContainerElement.style.backgroundColor = 'white';
