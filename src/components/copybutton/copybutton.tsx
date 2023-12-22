@@ -13,7 +13,9 @@ type CopyButtonProps = {
 
 const CopyButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, resultRef }: CopyButtonProps) => {
     const handleButtonClick = () => {
+        //console.log(resultRef)
         const resultContainerElement = resultRef.current;
+        
         const selection = window.getSelection();
         if(resultContainerElement && selection){
     
@@ -23,7 +25,6 @@ const CopyButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, r
             // Set the desired styles
             resultContainerElement.style.color = 'black';
             resultContainerElement.style.backgroundColor = 'white';
-            
     
             selection.selectAllChildren(resultContainerElement);
     

@@ -1,5 +1,8 @@
 @import "../../index.css";
 
+#table {
+  display: none;
+}
 
 .UserDetails {
   display: flex;
@@ -18,48 +21,65 @@
   width: 50%;
   font-family: Arial;
 
-  .table {
-    table-layout: fixed;
-    width: 100%;
-
+  .userInformation {
+    display: none;
+    .loginDetails {
+      list-style: none;
+      list-style-type: none;
+    }
   }
 
-  .table,
-  .th,
-  .td {
-    border: 1px solid var(--color-teal);
-    box-sizing: content-box;
-    font-family: Arial;
-    .select {
-      user-select: all;
+  /* .tableContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .table {
+      table-layout: fixed;
+      width: 100%;
+
+    }
+
+    .table,
+    .th,
+    .td {
+      border: 1px solid var(--color-teal);
+      box-sizing: content-box;
       font-family: Arial;
-      text-align: left;
-      &::after {
-        content: "";
-        display: none;
-        margin-left: auto;
+
+      .select {
+        user-select: all;
+        font-family: Arial;
+        text-align: left;
+
+        &::after {
+          content: "";
+          display: none;
+          margin: 0 auto;
+        }
+      }
+
+      .td {
+        padding: 0.5rem;
+        text-align: start;
+        border: 1px solid var(--color-teal);
+        width: fit-content;
+      }
+
+      .th {
+        text-align: right;
+        font-family: Arial;
+        border: 1px solid var(--color-teal);
+        width: 5rem;
+        padding: 0.25rem 1rem;
+      }
+
+      .td,
+      .th {
+        height: 2rem;
       }
     }
-
-    .td {
-      padding: 0.5rem;
-      text-align: start;
-      border: 1px solid var(--color-teal);
-      width: fit-content;
-    }
-
-    .th {
-      text-align: right;
-      font-family: Arial;
-      border: 1px solid var(--color-teal);
-      width: 5rem;
-      padding: 0.25rem 1rem;
-    }
-    .td, .th {
-      height: 2rem;
-    }
-  }
-
+  } */
 
   .select {
     user-select: all;

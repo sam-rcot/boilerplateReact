@@ -9,40 +9,7 @@ type UserDetailsProps = {
     email: string,
     firstName: string
 }
-const tealColor = '#43cfb5'
-//const tealColor = '#003643'
-const tableStyle = {
-    border: `2px solid ${tealColor}`,
-    borderCollapse: 'collapse',
-    boxSizing: 'content-box',
-    fontFamily: 'Arial',
-    //tableLayout: 'fixed',
-    //width: '100%'
-};
 
-const thStyle = {
-    textAlign: 'right',
-    fontFamily: 'Arial',
-    border: `2px solid ${tealColor}`,
-    width: '15%',
-    padding: '5px 10px',
-    height: '5px'
-};
-
-const tdStyle = {
-    padding: '10px',
-    textAlign: 'start',
-    border: `2px solid ${tealColor}`,
-    width: 'fit-content',
-    height: '25px'
-};
-
-const selectStyle = {
-    userSelect: 'all',
-    fontFamily: 'Arial',
-    textAlign: 'left',
-    padding: '2px',
-};
 const UserDetails = ({ email, firstName }: UserDetailsProps) => {
     const resultRef = useRef<HTMLDivElement>(null);
     const [password, setPassword] = useState(generatePassword());
@@ -92,46 +59,17 @@ const UserDetails = ({ email, firstName }: UserDetailsProps) => {
                         (https://portal.rcot.co.uk/) in a new browser window or tab using the access
                         credentials shown below and amend your password to something more
                         secure.
-                        <br />
-                    </p>
-                    <br />
-
-                    <div className={styles.tableContainer}>
-
-                        <table className={styles.table} ref={tableRef} style={tableStyle} data-table id="table">
-                            <tbody>
-                                <tr>
-                                    <th data-role="th" style={{ ...thStyle }}>Username:</th>
-                                    <td data-role="td" style={tdStyle}>
-                                        
-                                        <span data-role="th" style={selectStyle} onClick={handleSelectAll}>
-                                            {email}
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th data-role="th" style={thStyle}>Password:</th>
-                                    <td data-role="td" style={tdStyle}>
-                                        <table><thead><tr><td><span data-role="span" style={selectStyle} onClick={handleSelectAll}>
-                                            {password}
-                                        </span></td></tr></thead></table>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                    </div>
-
-                    <br />
-                    <p className={styles.userInformation}>
-                        <strong>Username:</strong> <span className={styles.select} onClick={handleSelectAll}>{email}</span>
-                        <br />
-                        <strong>Temporary password:</strong>{" "}
-                        <span className={styles.select} onClick={handleSelectAll}>{password}</span>
                         <br /><br />
                     </p>
+                    <p className={styles.userInformation}>
+                        <ul className={styles.loginDetails}>
+                            <li><strong>Username:</strong></li>
+                            <li><span className={styles.select} onClick={handleSelectAll} style={{backgroundColor: 'pink', padding: '2.5rem', fontSize: '40px'}}>{email}</span></li>
+                            <li><strong>Temporary password:</strong>{" "}</li>
+                            <li><span className={styles.select} onClick={handleSelectAll}>{password}</span></li>
+                        </ul>
+                    </p>
+                    <br /><br />
                     <p>
                         Kind Regards,<br />
                         Digital Team</p>
