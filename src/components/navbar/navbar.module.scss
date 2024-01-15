@@ -29,8 +29,8 @@
       display: inline-block;
       line-height: 1;
       text-align: center;
-      cursor: pointer;
       transition: all 0.25s ease;
+      cursor: default;
       
       &.hiddenMenu {
         border: none;
