@@ -16,6 +16,8 @@ body {
 h1 {
     font-family: 'Cera Pro';
     text-align: center;
+    font-size: 1.9rem;
+    padding-bottom: 0.75rem;
 }
 a:visited {
     color: #06c;
