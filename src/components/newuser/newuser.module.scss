@@ -33,17 +33,18 @@
     color: white;
     transition: all 0.3s ease;
     width: fit-content;
-    
-    .infoText {
-      width: 50%;
-      list-style: none;
-      li {
-        padding-left: 1rem;
-        text-indent: -0.7rem;
-      }
-      li::before {
-        content: "– ";
-      }
+  }
+  .infoText {
+    width: 50%;
+    list-style: none;
+    font-family: "Cera Pro";
+
+    li {
+      padding-left: 1rem;
+      text-indent: -0.7rem;
+    }
+    li::before {
+      content: "– ";
     }
   }
 }
