@@ -3,30 +3,119 @@
 .NavBar {
   margin-top: 5px;
   width: 65vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+
+  .menu {
+    font-size: 2.20rem;
+    font-weight: bold;
+    padding: 0px 0px;
+    border-radius: 0px;
+    text-decoration: none;
+    //background-color: var(--color-dark-teal);
+    text-align: center;
+
+
+    .menuText {
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom: 3px solid currentColor;
+      display: inline-block;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      
+      &.hiddenMenu {
+        border: none;
+        transform: translateX(-50%) scale(0);
+        transition: all 0.25s ease;
+
+      }
+    }
+
+    .faIcon {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+      line-height: 1;
+      display: inline-block;
+      transition: all 0.5s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-teal);
+
+      }
+
+    }
+  }
+
   .links {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
     text-align: center;
     padding-left: 0px;
+    transform-origin: left;
+    transition: transform 0.5s ease, opacity 0.25s ease;
+    transition-delay: 0s, 0.0s;
+
+    &.hidden {
+      transform: scale(0);
+      opacity: 0;
+      transition-delay: 0.0s, 0.0s;
+    }
+
+    &.visible {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.0s, 0.0s;
+    }
+
     .link {
       list-style: none;
+      margin: 0 1rem;
+
+      .faIconUp {
+        font-size: 1.8rem;
+        line-height: 1;
+        margin-left: 1rem;
+        transition: all 0.5s ease;
+
+        &:hover {
+          color: var(--color-teal);
+        }
+      }
+
       .active {
         text-decoration: underline;
+
         &:hover {
           text-decoration: underline;
         }
       }
+
       a {
         text-decoration: none;
         color: white;
         text-transform: capitalize;
-        font-size: 2.20rem;
+        font-size: 1.75rem;
         font-weight: bold;
-        padding: 15px 10px;
+        padding: 0.25rem 0.175rem;
         border-radius: 10px;
         font-family: "Cera Pro";
         transition: 200ms ease;
         white-space: nowrap;
+
         &:hover {
           text-decoration: none;
           color: var(--color-teal);
@@ -42,7 +131,7 @@
     .links {
       .link {
         a {
-          font-size: 2rem;
+          font-size: 1.2rem;
         }
       }
     }
@@ -51,12 +140,43 @@
 
 @media only screen and (max-width: 600px) {
   .NavBar {
+    .menu {
+      display: flex;
+      flex-direction: column;
+
+      .menuText {
+        border: none;
+      }
+
+      .faIcon {
+        padding-left: 0px;
+        padding-top: 0.2rem
+      }
+    }
+
     .links {
       flex-direction: column;
+
+      &.hidden {
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 0.1s, 0.0s;
+      }
+
+      &.visible {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.0s, 0.0s;
+
+      }
+
       .link {
         a {
-          font-size: 1.65rem;
+          font-size: 1rem;
           padding: 10px 5px;
+
           &:hover {
             color: white;
             background-color: transparent;
