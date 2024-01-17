@@ -10,6 +10,7 @@ import PasswordReset from './components/passwordreset/passwordreset'
 import GeneralPurpose from './components/generalpurpose/generalpurpose';
 import InboxMonitoring from './components/inboxmonitoring/inboxmonitoring';
 import NewUser from './components/newuser/newuser';
+import AccountRegistration from './components/accountregistration/accountregistration';
 
 function App() {
   const [firstName, setFirstName] = useState('');
@@ -26,6 +27,7 @@ function App() {
           <Route path="inboxmonitoring/*" element={<InboxMonitoring firstName={firstName}
             setFirstName={setFirstName} />} />
             <Route path="newuser/*" element={<NewUser/>} />
+          <Route path="accountregistration/*" element={<AccountRegistration/>}/>
         </Routes>
       </div>
     </Router>

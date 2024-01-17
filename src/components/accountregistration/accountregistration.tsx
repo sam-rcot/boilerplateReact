@@ -1,18 +1,18 @@
 import { useState } from 'react'
-import styles from './passwordreset.module.scss'
+import styles from './accountregistration.module.scss'
 import UserDetails from '../userdetails/userdetails'
 import UserForm from '../userform/userform'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
-const PasswordReset = () => {
+const AccountRegistration = () => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [isInfoTextVisible, setInfoTextVisibility] = useState(false);
 
   return (
-    <div className={styles.PasswordReset}>
+    <div className={styles.NewUser}>
       <button className={styles.hideButton} onClick={() => setInfoTextVisibility(!isInfoTextVisible)}>
         {isInfoTextVisible ?
           <span><FontAwesomeIcon icon={faChevronUp} /> Hide Help Text</span> :
@@ -32,23 +32,23 @@ const PasswordReset = () => {
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />
       <UserDetails email={email} firstName={firstName} message={
         <>
-        <p>Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
-          Apologies for the issues you have been having logging in. I have now
-          updated your account and created a new temporary password.
-          <br /><br />
-          Please login to the{" "}
-          <a href="https://portal.rcot.co.uk/">
-            <strong>RCOT Portal</strong>
-          </a>{" "}
-          (https://portal.rcot.co.uk/) in a new browser window or tab using the access
-          credentials shown below and amend your password to something more
-          secure.
+          <p>Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
+            To help us safely confirm your primary email address and to clear any duplicates, a new temporary password has been created.
+            <br /><br />
+            Please login to the{" "}
+            <a href="https://portal.rcot.co.uk/">
+              <strong>RCOT Portal</strong>
+            </a>{" "}
+            (https://portal.rcot.co.uk/) in a new browser window or tab using the access
+            credentials shown below and amend your password to something more
+            secure.
+            <br />
+          </p>
           <br />
-        </p>
-          <br />
-        </>} />
+        </>
+      } />
     </div>
   )
 }
 
-export default PasswordReset
+export default AccountRegistration

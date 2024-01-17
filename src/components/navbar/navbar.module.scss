@@ -9,6 +9,7 @@
   justify-content: center;
   align-content: center;
   position: relative;
+  height: fit-content;
 
   .menu {
     font-size: 2rem;
@@ -16,22 +17,25 @@
     padding: 0px 0px;
     border-radius: 0px;
     text-decoration: none;
-    //background-color: var(--color-dark-teal);
     text-align: center;
-
+    max-width: 90vw;
 
     .menuText {
       box-sizing: border-box;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      border-bottom: 3px solid currentColor;
+      //border-bottom: 3px solid currentColor;
+      text-decoration: underline;
       display: inline-block;
       line-height: 1;
       text-align: center;
       transition: all 0.25s ease;
+      width: fit-content;
       cursor: default;
-      
+      white-space: nowrap;
+      overflow: hidden;
+
       &.hiddenMenu {
         border: none;
         transform: translateX(-50%) scale(0);
@@ -40,25 +44,36 @@
       }
     }
 
-    .faIcon {
-      font-size: 1.8rem;
-      padding-left: 1rem;
-      line-height: 1;
-      display: inline-block;
-      transition: all 0.5s ease;
-      cursor: pointer;
-
-      &:hover {
-        color: var(--color-teal);
-
+    .menuIconContainer {
+      position: relative;
+      margin-right: 1rem;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .icon, .iconSmall {
+          position: absolute;
+          font-size: 1.8rem;
+          transition: opacity 0.3s, transform 0.3s;
+          opacity: 0;  
+          transform: scale(0.8) rotate(-90deg); // Start with a slight scale down and no rotation
+  
+          &.visible {
+              opacity: 1;
+              transform: scale(1) rotate(0deg); // Rotate as the icon becomes visible
+          }
       }
-
+  }
+    .iconSmall {
+      display: none;
     }
   }
 
   .links {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
@@ -126,7 +141,15 @@
   }
 }
 
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 1250px) {
+  .NavBar {
+    .links {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
   .NavBar {
     .links {
       .link {
@@ -138,24 +161,52 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 870px) {
   .NavBar {
+    .menu {
+      .menuText {
+        border: none;
+      }
+    }
+
+    .links {
+      .link {
+        a {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .NavBar {
+    flex-direction: column;
+
     .menu {
       display: flex;
       flex-direction: column;
 
       .menuText {
+        top: 30%;
         border: none;
       }
 
-      .faIcon {
+      .menuIconContainer {
         padding-left: 0px;
-        padding-top: 0.2rem
+        margin: 0.2rem 0;
+        .icon {
+          display: none;
+        }
+        .iconSmall {
+          display: block;
+        }
       }
     }
 
     .links {
       flex-direction: column;
+      transform-origin: top;
 
       &.hidden {
         transform: scale(0);

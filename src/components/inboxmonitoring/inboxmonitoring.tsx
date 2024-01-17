@@ -33,7 +33,6 @@ const InboxMonitoring = ({ firstName, setFirstName }: UserFormProps) => {
     return (
         <>
             <div className={styles.InboxMonitoring}>
-                <h1>Inbox Monitoring Boilerplate</h1>
                 <button className={styles.hideButton} onClick={() => setInfoTextVisibility(!isInfoTextVisible)}>
                     {isInfoTextVisible ?
                         <span><FontAwesomeIcon icon={faChevronUp} /> Hide Help Text</span> :

@@ -13,7 +13,6 @@ type UserFormProps = {
 const GeneralPurpose = ({ firstName, setFirstName }: UserFormProps) => {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-
         setFirstName("");
 
     };
@@ -33,7 +32,6 @@ const GeneralPurpose = ({ firstName, setFirstName }: UserFormProps) => {
     return (
         <>
             <div className={styles.GeneralPurpose}>
-                <h1>General Purpose Boilerplate</h1>
                 <button className={styles.hideButton} onClick={() => setInfoTextVisibility(!isInfoTextVisible)}>
                     {isInfoTextVisible ?
                         <span><FontAwesomeIcon icon={faChevronUp} /> Hide Help Text</span> :

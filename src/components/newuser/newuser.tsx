@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './newuser.module.scss'
-import NewUserDetails from '../newuserdetails/newuserdetails'
+import UserDetails from '../userdetails/userdetails'
 import UserForm from '../userform/userform'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -13,7 +13,6 @@ const PasswordReset = () => {
 
   return (
     <div className={styles.NewUser}>
-      <h1>New User Boilerplate</h1>
       <button className={styles.hideButton} onClick={() => setInfoTextVisibility(!isInfoTextVisible)}>
         {isInfoTextVisible ?
           <span><FontAwesomeIcon icon={faChevronUp} /> Hide Help Text</span> :
@@ -31,7 +30,23 @@ const PasswordReset = () => {
         </ul>
       }
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />
-      <NewUserDetails email={email} firstName={firstName} />
+      <UserDetails email={email} firstName={firstName} message={
+        <>
+          <p>Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
+            Your account has been set up with a new temporary password.
+            <br /><br />
+            Please login to the{" "}
+            <a href="https://portal.rcot.co.uk/">
+              <strong>RCOT Portal</strong>
+            </a>{" "}
+            (https://portal.rcot.co.uk/) in a new browser window or tab using the access
+            credentials shown below and amend your password to something more
+            secure.
+            <br />
+          </p>
+          <br />
+        </>
+      } />
     </div>
   )
 }
