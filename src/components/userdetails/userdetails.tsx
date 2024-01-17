@@ -16,6 +16,7 @@ const tableStyle = {
     borderCollapse: 'collapse' as const, // Use 'as const' for literal string types
     boxSizing: 'content-box' as const,
     fontFamily: 'Arial',
+    maxWidth: 'inherit'
 };
 
 const thStyle = {
