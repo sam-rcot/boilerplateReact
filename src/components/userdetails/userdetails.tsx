@@ -44,9 +44,26 @@ const selectStyle = {
 
 const UserDetails = ({ email, firstName, message }: UserDetailsProps) => {
     const resultRef = useRef<HTMLDivElement>(null);
-    const [password, setPassword] = useState(generatePassword());
     const [pressedButtonId, setPressedButtonId] = useState<null | string>(null);
     const tableRef = useRef<HTMLTableElement>(null)
+    const [passwordLength, setPasswordLength] = useState(16);
+    const [numbers, setNumbers] = useState(true)
+    const [symbols, setSymbols] = useState(true)
+    const [password, setPassword] = useState(generatePassword(passwordLength, symbols, numbers));
+
+    const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newPasswordLength = parseInt(event.target.value);
+        setPasswordLength(newPasswordLength);
+        setPassword(generatePassword(newPasswordLength, symbols, numbers)); // Regenerate password
+    };
+    const handleSymbolsChange = () => {
+        setSymbols(!symbols)
+        setPassword(generatePassword(passwordLength, numbers, !symbols)); // Regenerate password with updated symbols preference
+    }
+    const handleNumbersChange = () => {
+        setNumbers(!numbers)
+        setPassword(generatePassword(passwordLength, !numbers, symbols)); // Regenerate password with updated symbols preference
+    }
 
     const handleButtonPress = (id: string) => {
         setPressedButtonId(id);
@@ -118,6 +135,28 @@ const UserDetails = ({ email, firstName, message }: UserDetailsProps) => {
                     <p>
                         Kind Regards,<br />
                         Digital Team</p>
+                </div>
+                <div className={styles.sliderContainer}>
+                    <input
+                        type="range"
+                        min="12"
+                        max="20"
+                        value={passwordLength}
+                        onChange={handleSliderChange}
+                        className={styles.slider}
+                    />
+                    <div className={styles.optionsContainer}>
+                        <label className={styles.labelContainer}>
+                            <input type="checkbox" checked={symbols} onChange={handleSymbolsChange} />
+                            <span className={styles.checkmark}></span>
+                            <span className={styles.checkboxLabel}>Symbols</span>
+                        </label>
+                        <label className={styles.labelContainer}>
+                            <input type="checkbox" checked={numbers} onChange={handleNumbersChange} />
+                            <span className={styles.checkmark}></span>
+                            <span className={styles.checkboxLabel}>Numbers</span>
+                        </label>
+                    </div>
                 </div>
                 <div className={styles.buttonContainer}>
                     <CopyButton

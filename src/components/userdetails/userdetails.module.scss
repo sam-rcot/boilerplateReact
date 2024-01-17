@@ -23,6 +23,7 @@
 
   .userInformation {
     display: none;
+
     .loginDetails {
       list-style: none;
       list-style-type: none;
@@ -107,6 +108,108 @@
 
   a:visited {
     color: #339CFF;
+  }
+}
+
+.optionsContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+
+  
+  .labelContainer {
+    display: flex;
+    align-items: center; // Align items vertically in the center
+    cursor: pointer;
+  
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+  
+    .checkmark {
+      height: 25px;
+      width: 25px;
+      border-radius: 15%;
+      background-color: #f0f0f0;
+      opacity: 0.9;
+      transition: opacity ease 0.2s;
+      margin-right: 10px; // Add some space between the checkmark and the label
+    }
+  
+    & input:checked ~ .checkmark {
+      background-color: var(--color-teal);
+    }
+  
+    &:hover input ~ .checkmark {
+      opacity: 1;
+    }
+  
+    & input:checked ~ .checkmark:after {
+      display: block;
+    }
+  
+    .checkboxLabel {
+      // No need for absolute positioning anymore
+      // The text will be aligned automatically
+    }
+  }
+  
+}
+
+.sliderContainer {
+  margin-top: 2rem;
+  width: 50%;
+
+  .slider {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    border-radius: 50px;
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+    outline: none;
+    opacity: 0.9;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: 1;
+      /* Fully shown on mouse-over */
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      /* Override default look */
+      appearance: none;
+      width: 25px;
+      /* Set a specific slider handle width */
+      height: 25px;
+      /* Slider handle height */
+      background: var(--color-teal);
+      /* Green background */
+      cursor: pointer;
+      /* Cursor on hover */
+      border-radius: 50%;
+    }
+
+    &::-moz-range-thumb {
+      width: 25px;
+      /* Set a specific slider handle width */
+      height: 25px;
+      /* Slider handle height */
+      background: var(--color-teal);
+      /* Green background */
+      cursor: pointer;
+      /* Cursor on hover */
+    }
   }
 }
 
