@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react'
+import { /* ReactNode, */ useRef, useState, useEffect } from 'react'
 import styles from "./userdetails.module.scss";
 import generatePassword from "../../utils/generatePassword";
 import CopyButton from '../copybutton/copybutton';
@@ -6,7 +6,7 @@ import PasswordButton from '../passwordbutton/passwordbutton';
 
 type UserDetailsProps = {
     email: string,
-    firstName: string,
+    //firstName: string,
     message: React.ReactNode
 }
 const tealColor = '#43cfb5';
@@ -44,7 +44,7 @@ const selectStyle = {
     padding: '2px',
 };
 
-const UserDetails = ({ email, firstName, message }: UserDetailsProps) => {
+const UserDetails = ({ email, /* firstName,  */message }: UserDetailsProps) => {
     const resultRef = useRef<HTMLDivElement>(null);
     const [pressedButtonId, setPressedButtonId] = useState<null | string>(null);
     const tableRef = useRef<HTMLTableElement>(null)
@@ -53,19 +53,22 @@ const UserDetails = ({ email, firstName, message }: UserDetailsProps) => {
     const [symbols, setSymbols] = useState(true)
     const [password, setPassword] = useState(generatePassword(passwordLength, symbols, numbers));
 
+    useEffect(() => {
+        setPassword(generatePassword(passwordLength, numbers, symbols));
+    }, [passwordLength, numbers, symbols]); // Depend on passwordLength, numbers, and symbols
+
     const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newPasswordLength = parseInt(event.target.value);
-        setPasswordLength(newPasswordLength);
-        setPassword(generatePassword(newPasswordLength, symbols, numbers)); // Regenerate password
+        setPasswordLength(parseInt(event.target.value));
     };
+
     const handleSymbolsChange = () => {
-        setSymbols(!symbols)
-        setPassword(generatePassword(passwordLength, numbers, !symbols)); // Regenerate password with updated symbols preference
-    }
+        setSymbols(!symbols);
+    };
+
     const handleNumbersChange = () => {
-        setNumbers(!numbers)
-        setPassword(generatePassword(passwordLength, !numbers, symbols)); // Regenerate password with updated symbols preference
-    }
+        setNumbers(!numbers);
+    };
+
 
     const handleButtonPress = (id: string) => {
         setPressedButtonId(id);
@@ -89,7 +92,7 @@ const UserDetails = ({ email, firstName, message }: UserDetailsProps) => {
         }
 
     };
-
+    //console.log(`typeof message: ${typeof(message)}`)
 
 
     return (
@@ -172,7 +175,11 @@ const UserDetails = ({ email, firstName, message }: UserDetailsProps) => {
                         handleButtonPress={handleButtonPress}
                         handleButtonRelease={handleButtonRelease}
                         setPassword={setPassword}
+                        passwordLength={passwordLength}
+                        useNumbers={numbers}
+                        useSymbols={symbols}
                     />
+
                 </div>
 
             </div >

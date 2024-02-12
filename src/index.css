@@ -5,6 +5,7 @@
     --color-teal: #43cfb5;
     --color-purple: #6f35a3;
 }
+
 body {
     margin: 0;
     background-color: var(--color-dark-teal);
@@ -13,18 +14,28 @@ body {
     overflow: scroll;
     text-rendering: optimizeLegibility;
 }
+
 h1 {
     font-family: 'Cera Pro';
     text-align: center;
     font-size: 1.9rem;
     padding-bottom: 0.75rem;
 }
+
+.infoText a {
+    color: #339CFF;
+}
+
 a:visited {
-    color: #06c;
+    color: #339CFF;
+}
+
+a {
+    color: #339CFF
 }
 
 @media only screen and (max-width: 870px) {
     h1 {
         font-size: 1.55rem;
     }
-  }
+}

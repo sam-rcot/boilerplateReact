@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://github.com/sam-rcot/boilerplateReact",
-  "license": "Unlicense",
+  "license": "GPL",
   "people": {
     "name" : "Sam Liburd",
     "email" : "sam.liburd@rcot.co.uk",

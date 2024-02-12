@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
-const PasswordReset = () => {
+const NewUser = () => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [isInfoTextVisible, setInfoTextVisibility] = useState(false);
@@ -30,7 +30,7 @@ const PasswordReset = () => {
         </ul>
       }
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />
-      <UserDetails email={email} firstName={firstName} message={
+      <UserDetails email={email} /* firstName={firstName} */ message={
         <>
           <p>Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
             Your account has been set up with a new temporary password.
@@ -51,4 +51,4 @@ const PasswordReset = () => {
   )
 }
 
-export default PasswordReset
+export default NewUser

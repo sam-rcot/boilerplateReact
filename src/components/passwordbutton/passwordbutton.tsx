@@ -8,11 +8,14 @@ type PasswordButtonProps = {
     handleButtonPress: (id: string) => void,
     handleButtonRelease: () => void,
     setPassword: (password: string) => void,
+    passwordLength: number,
+    useNumbers: boolean,
+    useSymbols: boolean,
 };
 
-const PasswordButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, setPassword }: PasswordButtonProps) => {
+const PasswordButton = ({ pressedButtonId, handleButtonPress, handleButtonRelease, setPassword, passwordLength, useNumbers, useSymbols }: PasswordButtonProps) => {
     const handleNewPassword = () => {
-        const newPassword = generatePassword();
+        const newPassword = generatePassword(passwordLength, useNumbers, useSymbols);
         setPassword(newPassword);
     };
 

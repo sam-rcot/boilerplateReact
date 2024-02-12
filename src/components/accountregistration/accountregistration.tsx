@@ -30,7 +30,7 @@ const AccountRegistration = () => {
         </ul>
       }
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />
-      <UserDetails email={email} firstName={firstName} message={
+      <UserDetails email={email} /* firstName={firstName} */ message={
         <>
           <p>Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
             To help us safely confirm your primary email address and to clear any duplicates, a new temporary password has been created.

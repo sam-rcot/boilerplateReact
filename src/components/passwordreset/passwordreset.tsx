@@ -30,7 +30,7 @@ const PasswordReset = () => {
         </ul>
       }
       <UserForm setEmail={setEmail} setFirstName={setFirstName} />
-      <UserDetails email={email} firstName={firstName} message={
+      <UserDetails email={email} /* firstName={firstName} */ message={
         <>
         <p>Hi{firstName ? ` ${firstName.charAt(0).toUpperCase() + firstName.slice(1)}` : ""},<br /><br />
           Apologies for the issues you have been having logging in. I have now
